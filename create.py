@@ -7,8 +7,8 @@ path = "C:/MyProjects/"
 browser = webdriver.Chrome("C:/Windows/ChromeDriver/chromedriver.exe")
 browser.get('http://github.com/login')
 
-username = 'lactic.nakul@gmail.com'
-password = 'raving_beast69'
+username = ''
+password = ''
 
 def create():
     folderName = str(sys.argv[1])
@@ -24,7 +24,8 @@ def create():
     python_button.send_keys(folderName)
     python_button = browser.find_element_by_css_selector('button.first-in-line')
     python_button.submit()
-    browser.quit()
+    python_button = browser.find_element_by_css_selector('clipboard-copy.btn.btn-sm.zeroclipboard-button')
+    python_button.click()
 
 if __name__ == "__main__":
     create()
